@@ -3,6 +3,8 @@ jobs:
   docker-ros:
     runs-on: ubuntu-latest
     steps:
+      - name: Clone repo without LFS
+        run: git lfs uninstall && git lfs pull --exclude="*.pth"
       - name: Free up disk space
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc

@@ -6,4 +6,4 @@ jobs:
       - uses: ika-rwth-aachen/docker-ros@v1.7.0
         with:
           base-image: rwthika/ros2-torch:humble-desktop-full-torch2.5.0
-          command: ros2 launch instance_segmentation instance_segmentation_launch.py image_topic:=/carla/ego_vehicle/rgb_front/image
+          command: ros2 run instance_segmentation instance_segmentation_node.py

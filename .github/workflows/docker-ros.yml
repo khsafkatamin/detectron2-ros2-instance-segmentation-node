@@ -12,5 +12,5 @@ jobs:
           sudo apt-get update
       - uses: ika-rwth-aachen/docker-ros@v1.7.0
         with:
-          base-image: rwthika/ros2-torch:humble-ros-base-torch2.5.0
+          base-image: rwthika/ros2-torch:humble-desktop-full-torch2.5.0
           command: ros2 run instance_segmentation instance_segmentation_node.py

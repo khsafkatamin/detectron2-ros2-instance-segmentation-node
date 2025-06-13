@@ -3,6 +3,12 @@ jobs:
   docker-ros:
     runs-on: ubuntu-latest
     steps:
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
+          docker system prune -af
+          sudo apt-get clean
+          df -h
       - uses: ika-rwth-aachen/docker-ros@v1.7.0
         with:
           base-image: rwthika/ros2-torch:humble-ros-base-torch2.5.0

@@ -8,7 +8,8 @@ jobs:
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
           docker system prune -af
           sudo apt-get clean
-          df -h
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
       - uses: ika-rwth-aachen/docker-ros@v1.7.0
         with:
           base-image: rwthika/ros2-torch:humble-ros-base-torch2.5.0
